@@ -1,3 +1,33 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "kenpompy"
+version = "0.5.0"
+description = "A python package for scraping kenpom.com NCAA basketball data."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.8"
+authors = [
+    { name = "Jared Andrews", email = "jared.andrews07@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mechanicalsoup",
+    "pandas",
+    "bs4",
+    "cloudscraper",
+]
+
+[project.urls]
+Homepage = "https://github.com/j-andrews7/kenpompy"
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "docs"]
