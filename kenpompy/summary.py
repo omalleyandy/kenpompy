@@ -365,8 +365,8 @@ def get_playerstats(browser: CloudScraper, season: Optional[str]=None, metric: s
 		# Dataframe tidying.
 		ps_df = ps_df[0]
 
-		if metric.upper() in ['2P', '3P', 'FT']:
-			ps_df.columns = ['Rank', 'Player', 'Team', metric.rstrip('%') + 'M', 
+		if metric.rstrip('%').upper() in ['2P', '3P', 'FT']:
+			ps_df.columns = ['Rank', 'Player', 'Team', metric.rstrip('%') + 'M',
 			metric.rstrip('%') + 'A', metric, 'Ht', 'Wt', 'Yr'] 
 		else:
 			ps_df.columns = ['Rank', 'Player', 'Team', metric, 'Ht', 'Wt', 'Yr'] 
